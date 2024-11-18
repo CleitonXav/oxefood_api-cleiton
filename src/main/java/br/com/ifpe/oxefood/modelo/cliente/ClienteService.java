@@ -21,12 +21,12 @@ public class ClienteService {
     }
     public List<Cliente> listarTodos() {
   
-      return repository.findAll(); // select * from cliente
+      return repository.findAll(); 
   }
 
   public Cliente obterPorID(Long id) {
 
-      return repository.findById(id).get(); //select * from cliente where id = ?
+      return repository.findById(id).get();
   }
 
  }
