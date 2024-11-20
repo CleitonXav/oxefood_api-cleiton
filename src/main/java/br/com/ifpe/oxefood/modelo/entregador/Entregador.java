@@ -1,4 +1,4 @@
-package br.com.ifpe.oxefood.modelo.cliente;
+package br.com.ifpe.oxefood.modelo.entregador;
 
 import java.time.LocalDate;
 
@@ -18,8 +18,8 @@ import lombok.Setter;
 
 // JPA Serve para um proposito: Enyty Entidade manipulada pelo JPA
 @Entity
-@Table(name = "Cliente")
-@SQLRestriction("habilitado = true") // o True vai acrescentar dinamicamente numa classe "exclusão lógica" habilitando true ou false.
+@Table(name = "Entregador")
+@SQLRestriction("habilitado = true") // o True vai acrescentar numa classe "exclusão lógica" habilitando true ou false.
 
 // lombok para outro proposito 
 @Builder
@@ -27,7 +27,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor 
-public class Cliente extends EntidadeAuditavel  {
+public class Entregador extends EntidadeAuditavel  {
   
     @Column
     private String nome;
