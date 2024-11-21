@@ -1,6 +1,5 @@
 package br.com.ifpe.oxefood.modelo.produto;
-
-import java.time.LocalDate;
+//import java.time.LocalDate;
 
 import org.hibernate.annotations.SQLRestriction;
 
@@ -30,19 +29,22 @@ import lombok.Setter;
 public class Produto extends EntidadeAuditavel  {
   
     @Column
-    private String nome;
+    private String Titulo;
  
     @Column
-    private LocalDate dataNascimento;
+    private String CodigoDoProduto;
  
     @Column
-    private String cpf;
+    private String Descrição;
  
     @Column
-    private String foneCelular;
+    private Double ValorUnitario;
  
     @Column
-    private String foneFixo;
+    private Integer tempoDeEntregaMínimoEmMinutos;
+
+    @Column
+    private Integer tempoDeEntregaMáximoEmMinutos;
  
  }
  
