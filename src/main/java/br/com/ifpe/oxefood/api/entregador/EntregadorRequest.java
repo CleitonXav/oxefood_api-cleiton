@@ -23,18 +23,53 @@ public class EntregadorRequest {
 
    private String cpf;
 
+   private String rg;
+
    private String foneCelular;
 
    private String foneFixo;
+
+   private Integer qtdEntregasRealizadas;
+
+   private Double valorPorFrete;
+
+   private String rua;
+
+   private String numero;
+
+   private String bairro;
+
+   private String cidade;
+
+   private String CEP;
+
+   private String UF;
+
+   private String complemento;
+
+   private String ativo;
+
+   
 
    public Entregador build() {
 
        return Entregador.builder()
            .nome(nome)
-           .dataNascimento(dataNascimento)
            .cpf(cpf)
+           .rg(rg)
+           .dataNascimento(dataNascimento)
            .foneCelular(foneCelular)
            .foneFixo(foneFixo)
+           .qtdEntregasRealizadas(qtdEntregasRealizadas)
+           .valorPorFrete(valorPorFrete)
+           .rua(rua)
+           .numero(numero)
+           .bairro(bairro)
+           .cidade(cidade)
+           .cep(CEP)
+           .uf(UF)
+           .complemento(complemento)
+           .ativo(ativo)
            .build();
    }
 

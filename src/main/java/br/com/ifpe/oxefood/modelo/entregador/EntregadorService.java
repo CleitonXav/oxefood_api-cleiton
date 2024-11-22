@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import jakarta.transaction.Transactional;
 
 @Service
-public class EntService {
+public class EntregadorService {
     
     @Autowired
     private EntregadorRepository repository;

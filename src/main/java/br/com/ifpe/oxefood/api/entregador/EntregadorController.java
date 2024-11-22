@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.ifpe.oxefood.modelo.entregador.Entregador;
-import br.com.ifpe.oxefood.modelo.entregador.EntregadorRepository;
+import br.com.ifpe.oxefood.modelo.entregador.EntregadorService;
 
 @RestController
 @RequestMapping("/api/entregador")
@@ -22,7 +22,7 @@ import br.com.ifpe.oxefood.modelo.entregador.EntregadorRepository;
 public class EntregadorController {
 
   @Autowired
-  private EntregadorRepository entregadorService;
+  private EntregadorService entregadorService;
 
   @PostMapping
   public ResponseEntity<Entregador> save(@RequestBody EntregadorRequest request) {

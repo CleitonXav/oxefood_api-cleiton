@@ -4,6 +4,7 @@ import java.time.LocalDate;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
+import br.com.ifpe.oxefood.modelo.cliente.Cliente;
 import br.com.ifpe.oxefood.modelo.produto.Produto;
 import jakarta.persistence.Column;
 import lombok.AllArgsConstructor;
@@ -17,30 +18,28 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class ProdutoRequest {
 
-   private String Titulo;
+   private String titulo;
 
-   //@JsonFormat(pattern = "dd/MM/yyyy")
-   private String CodigoDoProduto;
+   private String codigoDoProduto;
 
-   private String Descrição;
+   private String descrição;
 
-   private Double ValorUnitario;
+   private Double valorUnitario;
 
    private Integer tempoDeEntregaMínimoEmMinutos;
 
    private Integer tempoDeEntregaMáximoEmMinutos;
 
-   public Produto build() {
+  public Produto build() {
 
-       return Produto.builder()
-       
-           .Titulo(Titulo)
-           .CodigoDoProduto(CodigoDoProduto)
-           .Descrição(Descrição)
-           .ValorUnitario(ValorUnitario)
-           .tempoDeEntregaMínimoEmMinutos;
-           .tempoDeEntregaMáximoEmMinutos;
+      return Produto.builder()
+           .titulo(titulo)
+           .descrição(descrição)
+           .valorUnitario(valorUnitario)
+           .tempoDeEntregaMínimoEmMinutos(tempoDeEntregaMínimoEmMinutos)
+           .tempoDeEntregaMáximoEmMinutos(tempoDeEntregaMáximoEmMinutos)
            .build();
    }
+
 
 }
