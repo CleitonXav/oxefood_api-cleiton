@@ -30,6 +30,7 @@ public class ProdutoRequest {
 
     return Produto.builder()
     .titulo(titulo)
+    .codigoDoProduto(codigoDoProduto)
     .descrição(descrição)
     .valorUnitario(valorUnitario)
     .tempoDeEntregaMínimoEmMinutos(tempoDeEntregaMínimoEmMinutos)

@@ -21,12 +21,12 @@ public class ClienteService {
     }
     public List<Cliente> listarTodos() {
   
-      return repository.findAll(); 
+      return repository.findAll(); //select * from cliente
   }
 
   public Cliente obterPorID(Long id) {
 
-      return repository.findById(id).get();
+      return repository.findById(id).get(); //select * from cliente where id = ?
   }
   @Transactional
   public void update(Long id, Cliente clienteAlterado) {

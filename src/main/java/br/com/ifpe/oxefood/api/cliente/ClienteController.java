@@ -33,7 +33,7 @@ public class ClienteController {
       Cliente clienteNovo = request.build();
       Cliente cliente = clienteService.save(clienteNovo);
       return new ResponseEntity<Cliente>(cliente, HttpStatus.CREATED);
-  }
+    }
      @GetMapping
     public List<Cliente> listarTodos() {
         return clienteService.listarTodos();
@@ -42,20 +42,22 @@ public class ClienteController {
     @GetMapping("/{id}")
     public Cliente obterPorID(@PathVariable Long id) {
         return clienteService.obterPorID(id);
-
     }
-     @PutMapping("/{id}")
- public ResponseEntity<Cliente> update(@PathVariable("id") Long id, @RequestBody ClienteRequest request) {
 
-       clienteService.update(id, request.build());
-       return ResponseEntity.ok().build();
- }
    @DeleteMapping("/{id}")
    public ResponseEntity<Void> delete(@PathVariable Long id) {
 
        clienteService.delete(id);
        return ResponseEntity.ok().build();
    }
+   
+   @PutMapping("/{id}")
+    public ResponseEntity<Cliente> update(@PathVariable("id") Long id, @RequestBody ClienteRequest request) {
+  
+         clienteService.update(id, request.build());
+         return ResponseEntity.ok().build();
+   }
+  
 
   }
   
