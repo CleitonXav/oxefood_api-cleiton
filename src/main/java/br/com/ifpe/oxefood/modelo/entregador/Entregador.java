@@ -1,9 +1,7 @@
 package br.com.ifpe.oxefood.modelo.entregador;
 
 import java.time.LocalDate;
-
 import org.hibernate.annotations.SQLRestriction;
-
 import br.com.ifpe.oxefood.util.entity.EntidadeAuditavel;
 
 import jakarta.persistence.Column;
@@ -75,27 +73,7 @@ public class Entregador extends EntidadeAuditavel  {
     private String complemento;
 
     @Column
-    private String ativo;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
+    private Boolean ativo;
  
  }
  

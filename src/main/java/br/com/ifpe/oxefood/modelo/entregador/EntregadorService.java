@@ -1,35 +1,32 @@
 package br.com.ifpe.oxefood.modelo.entregador;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import jakarta.transaction.Transactional;
-
+import java.util.List;
 @Service
 public class EntregadorService {
     
     @Autowired
-    private EntregadorRepository repository;
- 
-    @Transactional
-    public Entregador save(Entregador entregador) {
- 
-        entregador.setHabilitado(Boolean.TRUE);
-        return repository.save(entregador);
-    }
-    public List<Entregador> listarTodos() {
+   private EntregadorRepository repository;
+
+   @Transactional
+   public Entregador save(Entregador entregador) {
+
+       entregador.setHabilitado(Boolean.TRUE);
+       return repository.save(entregador);
+   }
+     public List<Entregador> listarTodos() {
   
-      return repository.findAll(); 
-  }
+        return repository.findAll();
+    }
 
-  public Entregador obterPorID(Long id) {
+    public Entregador obterPorID(Long id) {
 
-      return repository.findById(id).get();
-  }
+        return repository.findById(id).get();
+    }
 
-       @Transactional
+    @Transactional
    public void update(Long id, Entregador entregadorAlterado) {
 
       Entregador entregador = repository.findById(id).get();
@@ -53,5 +50,14 @@ public class EntregadorService {
       repository.save(entregador);
     }
 
+    @Transactional
+    public void delete(Long id) {
+ 
+        Entregador entregador = repository.findById(id).get();
+        entregador.setHabilitado(Boolean.FALSE);
+ 
+        repository.save(entregador);
+    }
+ 
  }
  

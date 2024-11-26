@@ -47,7 +47,7 @@ public class EntregadorRequest {
 
    private String complemento;
 
-   private String ativo;
+   private Boolean ativo;
 
    
 
