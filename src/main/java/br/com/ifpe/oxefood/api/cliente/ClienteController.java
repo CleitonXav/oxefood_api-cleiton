@@ -43,13 +43,6 @@ public class ClienteController {
     public Cliente obterPorID(@PathVariable Long id) {
         return clienteService.obterPorID(id);
     }
-
-   @DeleteMapping("/{id}")
-   public ResponseEntity<Void> delete(@PathVariable Long id) {
-
-       clienteService.delete(id);
-       return ResponseEntity.ok().build();
-   }
    
    @PutMapping("/{id}")
     public ResponseEntity<Cliente> update(@PathVariable("id") Long id, @RequestBody ClienteRequest request) {
@@ -57,7 +50,12 @@ public class ClienteController {
          clienteService.update(id, request.build());
          return ResponseEntity.ok().build();
    }
-  
+   @DeleteMapping("/{id}")
+   public ResponseEntity<Void> delete(@PathVariable Long id) {
+
+       clienteService.delete(id);
+       return ResponseEntity.ok().build();
+   }  
 
   }
   

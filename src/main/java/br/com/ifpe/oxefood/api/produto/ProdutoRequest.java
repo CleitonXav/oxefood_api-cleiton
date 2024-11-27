@@ -18,23 +18,23 @@ public class ProdutoRequest {
 
     private String codigoDoProduto;
  
-    private String descrição;
+    private String descricao;
  
     private Double valorUnitario;
  
-    private Integer tempoDeEntregaMínimoEmMinutos;
+    private Integer tempoDeEntregaMinimoEmMinutos;
  
-    private Integer tempoDeEntregaMáximoEmMinutos;
+    private Integer tempoDeEntregaMaximoEmMinutos;
  
    public Produto build() {
 
     return Produto.builder()
     .titulo(titulo)
     .codigoDoProduto(codigoDoProduto)
-    .descrição(descrição)
+    .descricao(descricao)
     .valorUnitario(valorUnitario)
-    .tempoDeEntregaMínimoEmMinutos(tempoDeEntregaMínimoEmMinutos)
-    .tempoDeEntregaMáximoEmMinutos(tempoDeEntregaMáximoEmMinutos)
+    .tempoDeEntregaMinimoEmMinutos(tempoDeEntregaMinimoEmMinutos)
+    .tempoDeEntregaMaximoEmMinutos(tempoDeEntregaMaximoEmMinutos)
     .build();
    }
 }

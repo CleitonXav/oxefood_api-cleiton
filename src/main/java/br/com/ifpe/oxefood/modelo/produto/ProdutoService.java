@@ -34,10 +34,10 @@ public class ProdutoService {
       Produto produto = repository.findById(id).get();
       produto.setTitulo(produtoAlterado.getTitulo());
       produto.setCodigoDoProduto(produtoAlterado.getCodigoDoProduto());
-      produto.setDescrição(produtoAlterado.getDescrição());
+      produto.setDescricao(produtoAlterado.getDescricao());
       produto.setValorUnitario(produtoAlterado.getValorUnitario());
-      produto.setTempoDeEntregaMínimoEmMinutos(produtoAlterado.getTempoDeEntregaMínimoEmMinutos());
-      produto.setTempoDeEntregaMáximoEmMinutos(produtoAlterado.getTempoDeEntregaMáximoEmMinutos());
+      produto.setTempoDeEntregaMinimoEmMinutos(produtoAlterado.getTempoDeEntregaMinimoEmMinutos());
+      produto.setTempoDeEntregaMaximoEmMinutos(produtoAlterado.getTempoDeEntregaMaximoEmMinutos());
 	    
       repository.save(produto);
     }
