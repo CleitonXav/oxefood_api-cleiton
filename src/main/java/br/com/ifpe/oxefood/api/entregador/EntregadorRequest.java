@@ -15,60 +15,43 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class EntregadorRequest {
-
+   
    private String nome;
-
+   private String cpf;
+   private String rg;
    @JsonFormat(pattern = "dd/MM/yyyy")
    private LocalDate dataNascimento;
-
-   private String cpf;
-
-   private String rg;
-
    private String foneCelular;
-
    private String foneFixo;
-
-   private Integer qtdEntregasRealizadas;
-
-   private Double valorPorFrete;
-
-   private String rua;
-
-   private String numero;
-
-   private String bairro;
-
-   private String cidade;
-
-   private String CEP;
-
-   private String UF;
-
-   private String complemento;
-
+   private String qtdEntregasRealizadas;
+   private String valorFrete;
+   private String Rua;
+   private Number Numero;
+   private String Bairro;
+   private String Cep;
+   private String Cidade;
+   private String Estado;
+   private String Complemento;
    private Boolean ativo;
-
-   
 
    public Entregador build() {
 
        return Entregador.builder()
-           .nome(nome)
+           .nome(nome)           
            .cpf(cpf)
            .rg(rg)
            .dataNascimento(dataNascimento)
            .foneCelular(foneCelular)
-           .foneFixo(foneFixo)
+           .foneFixo(foneFixo)           
            .qtdEntregasRealizadas(qtdEntregasRealizadas)
-           .valorPorFrete(valorPorFrete)
-           .rua(rua)
-           .numero(numero)
-           .bairro(bairro)
-           .cidade(cidade)
-           .cep(CEP)
-           .uf(UF)
-           .complemento(complemento)
+           .valorFrete(valorFrete)
+           .Rua(Rua)
+           .Numero(Numero)
+           .Bairro(Bairro)
+           .Cep(Cep)
+           .Cidade(Cidade)
+           .Estado(Estado)
+           .Complemento(Complemento)
            .ativo(ativo)
            .build();
    }

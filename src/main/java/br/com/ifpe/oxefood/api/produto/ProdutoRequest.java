@@ -1,7 +1,5 @@
 package br.com.ifpe.oxefood.api.produto;
 
-//import com.fasterxml.jackson.annotation.JsonFormat;
-
 import br.com.ifpe.oxefood.modelo.produto.Produto;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -14,27 +12,30 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class ProdutoRequest {
 
-    private String titulo;
+   private Long idCategoria;
 
-    private String codigoDoProduto;
- 
-    private String descricao;
- 
-    private Double valorUnitario;
- 
-    private Integer tempoDeEntregaMinimoEmMinutos;
- 
-    private Integer tempoDeEntregaMaximoEmMinutos;
- 
+   private String codigo;
+
+   private String descricao;
+
+   private String tempoEntregaMaximo;
+
+   private String tempoEntregaMinimo;
+
+   private String titulo;
+
+   private Double valorUnitario;
+
    public Produto build() {
 
-    return Produto.builder()
-    .titulo(titulo)
-    .codigoDoProduto(codigoDoProduto)
-    .descricao(descricao)
-    .valorUnitario(valorUnitario)
-    .tempoDeEntregaMinimoEmMinutos(tempoDeEntregaMinimoEmMinutos)
-    .tempoDeEntregaMaximoEmMinutos(tempoDeEntregaMaximoEmMinutos)
-    .build();
+       return Produto.builder()
+           .codigo(codigo)
+           .descricao(descricao)
+           .tempoEntregaMaximo(tempoEntregaMaximo)
+           .tempoEntregaMinimo(tempoEntregaMinimo)
+           .titulo(titulo)
+           .valorUnitario(valorUnitario)
+           .build();
    }
+
 }

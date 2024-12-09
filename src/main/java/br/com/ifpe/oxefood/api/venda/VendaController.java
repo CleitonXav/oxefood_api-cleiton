@@ -1,4 +1,4 @@
-package br.com.ifpe.oxefood.api.entregador;
+package br.com.ifpe.oxefood.api.venda;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -13,47 +13,47 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.ifpe.oxefood.modelo.entregador.Entregador;
-import br.com.ifpe.oxefood.modelo.entregador.EntregadorService;
+import br.com.ifpe.oxefood.modelo.venda.Venda;
+import br.com.ifpe.oxefood.modelo.venda.VendaService;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/entregador")
+@RequestMapping("/api/venda")
 @CrossOrigin
-public class EntregadorController {
-
-    @Autowired
-    private EntregadorService entregadorService;
-
-    @PostMapping
-    public ResponseEntity<Entregador> save(@RequestBody EntregadorRequest request) {
-
-        Entregador entregador = entregadorService.save(request.build());
-        return new ResponseEntity<Entregador>(entregador, HttpStatus.CREATED);
-    }
+public class VendaController {
 
     @GetMapping
-    public List<Entregador> listarTodos() {
-        return entregadorService.listarTodos();
+    public List<Venda> listarTodos() {
+        return vendaService.listarTodos();
     }
 
     @GetMapping("/{id}")
-    public Entregador obterPorID(@PathVariable Long id) {
-        return entregadorService.obterPorID(id);
+    public Venda obterPorID(@PathVariable Long id) {
+        return vendaService.obterPorID(id);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Entregador> update(@PathVariable("id") Long id, @RequestBody EntregadorRequest request) {
+    public ResponseEntity<Venda> update(@PathVariable("id") Long id, @RequestBody VendaRequest request) {
 
-        entregadorService.update(id, request.build());
+        vendaService.update(id, request.build());
         return ResponseEntity.ok().build();
+    }
+
+    @Autowired
+    private VendaService vendaService;
+
+    @PostMapping
+    public ResponseEntity<Venda> save(@RequestBody VendaRequest request) {
+
+        Venda venda = vendaService.save(request.build());
+        return new ResponseEntity<Venda>(venda, HttpStatus.CREATED);
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(@PathVariable Long id) {
 
-        entregadorService.delete(id);
+        vendaService.delete(id);
         return ResponseEntity.ok().build();
     }
 
