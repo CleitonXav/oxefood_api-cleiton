@@ -31,6 +31,7 @@ public class SecurityConfiguration {
         this.jwtAuthenticationFilter = jwtAuthenticationFilter;
     }
 
+    // Cai em prova => securityFilterChain
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
@@ -38,6 +39,12 @@ public class SecurityConfiguration {
             .cors(cors -> cors.configurationSource(corsConfigurationSource()))
             .csrf(c -> c.disable())
             .authorizeHttpRequests(authorize -> authorize
+
+// Para liberar as rotas publicas do meu projeto! 
+// Para cada linha abaixo é uma rota que estarei liberando do Tipo (GET|POST|DELETE)
+                //.requestMatchers(HttpMethod.GET, "/api/produto").permitAll()
+                //.requestMatchers(HttpMethod.GET, "/api/produto/*").permitAll() // Utilizasse * quando recebe o ("/{id}") do Produto Controler
+                //.requestMatchers(HttpMethod.DELETE, "/api/cliente/*").permitAll() // * quando recebe o ("/{id}") do Cliente Controler
 
                 .requestMatchers(HttpMethod.POST, "/api/cliente").permitAll()
                 .requestMatchers(HttpMethod.POST, "/api/auth").permitAll()

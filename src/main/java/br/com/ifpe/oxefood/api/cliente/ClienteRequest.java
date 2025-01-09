@@ -25,6 +25,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ClienteRequest {
+
     @NotBlank(message = "O e-mail é de preenchimento obrigatório")
     @Email
     private String email;
@@ -51,6 +52,7 @@ public class ClienteRequest {
     private String foneFixo;
 
     public Usuario buildUsuario() {
+        
        return Usuario.builder()
            .username(email)
            .password(password)
@@ -59,8 +61,9 @@ public class ClienteRequest {
    }
 
     public Cliente build() {
+
         return Cliente.builder()
-        .usuario(buildUsuario())
+                .usuario(buildUsuario())
                 .nome(nome)
                 .dataNascimento(dataNascimento)
                 .cpf(cpf)
