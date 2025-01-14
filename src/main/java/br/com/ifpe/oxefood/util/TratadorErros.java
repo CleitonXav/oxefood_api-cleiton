@@ -15,7 +15,8 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 @RestControllerAdvice
 public class TratadorErros {
 
-//@SuppressWarnings("rawtypes")
+//
+@SuppressWarnings("rawtypes")
 @ExceptionHandler(Exception.class)
 public ResponseEntity tratarErro500(Exception ex) {
 

@@ -70,6 +70,9 @@ public class SecurityConfiguration {
                .requestMatchers(HttpMethod.DELETE, "/api/produto/*").hasAnyAuthority(
                    Perfil.ROLE_FUNCIONARIO_ADMIN) //Exclusão de produto
 
+                .requestMatchers(HttpMethod.DELETE, "/api/entregador/*").hasAnyAuthority(
+                    Perfil.ROLE_FUNCIONARIO_USER) //Exclusão de produto
+
 
                 .anyRequest().authenticated()
 

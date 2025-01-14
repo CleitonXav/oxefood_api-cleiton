@@ -59,24 +59,24 @@ public class Funcionario extends EntidadeAuditavel {
     private Double salario;
 
     @Column
-    private String enderecoRua;
+    private String Rua;
 
     @Column
-    private String enderecoNumero;
+    private String Numero;
 
     @Column
-    private String enderecoBairro;
+    private String Bairro;
 
     @Column
-    private String enderecoCidade;
+    private String Cidade;
 
     @Column
-    private String enderecoCep;
+    private String Cep;
 
     @Column
-    private String enderecoUf;
+    private String Uf;
 
     @Column
-    private String enderecoComplemento;
+    private String Complemento;
 
 }

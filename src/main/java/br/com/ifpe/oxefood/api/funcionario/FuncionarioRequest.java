@@ -48,19 +48,19 @@ public class FuncionarioRequest {
 
     private Double salario;
 
-    private String enderecoRua;
+    private String Rua;
 
-    private String enderecoNumero;
+    private String Numero;
 
-    private String enderecoBairro;
+    private String Bairro;
 
-    private String enderecoCidade;
+    private String Cidade;
 
-    private String enderecoCep;
+    private String Cep;
 
-    private String enderecoUf;
+    private String Uf;
 
-    private String enderecoComplemento;
+    private String Complemento;
 
     public Usuario buildUsuario() {
 
@@ -82,13 +82,13 @@ public class FuncionarioRequest {
                 .foneCelular(foneCelular)
                 .foneFixo(foneFixo)
                 .salario(salario)
-                .enderecoRua(enderecoRua)
-                .enderecoNumero(enderecoNumero)
-                .enderecoBairro(enderecoBairro)
-                .enderecoCidade(enderecoCidade)
-                .enderecoCep(enderecoCep)
-                .enderecoUf(enderecoUf)
-                .enderecoComplemento(enderecoComplemento)
+                .Rua(Rua)
+                .Numero(Numero)
+                .Bairro(Bairro)
+                .Cidade(Cidade)
+                .Cep(Cep)
+                .Uf(Uf)
+                .Complemento(Complemento)
                 .build();
     }
 

@@ -58,13 +58,13 @@ public class FuncionarioService {
         funcionario.setFoneCelular(funcionarioAlterado.getFoneCelular());
         funcionario.setFoneFixo(funcionarioAlterado.getFoneFixo());
         funcionario.setSalario(funcionarioAlterado.getSalario());
-        funcionario.setEnderecoRua(funcionarioAlterado.getEnderecoRua());
-        funcionario.setEnderecoNumero(funcionarioAlterado.getEnderecoNumero());
-        funcionario.setEnderecoBairro(funcionarioAlterado.getEnderecoBairro());
-        funcionario.setEnderecoCidade(funcionarioAlterado.getEnderecoCidade());
-        funcionario.setEnderecoCep(funcionarioAlterado.getEnderecoCep());
-        funcionario.setEnderecoUf(funcionarioAlterado.getEnderecoUf());
-        funcionario.setEnderecoComplemento(funcionarioAlterado.getEnderecoComplemento());
+        funcionario.setRua(funcionarioAlterado.getRua());
+        funcionario.setNumero(funcionarioAlterado.getNumero());
+        funcionario.setBairro(funcionarioAlterado.getBairro());
+        funcionario.setCidade(funcionarioAlterado.getCidade());
+        funcionario.setCep(funcionarioAlterado.getCep());
+        funcionario.setUf(funcionarioAlterado.getUf());
+        funcionario.setComplemento(funcionarioAlterado.getComplemento());
         
         repository.save(funcionario);
     }
