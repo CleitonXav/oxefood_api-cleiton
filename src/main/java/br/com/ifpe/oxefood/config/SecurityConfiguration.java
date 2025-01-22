@@ -32,7 +32,7 @@ public class SecurityConfiguration {
         this.jwtAuthenticationFilter = jwtAuthenticationFilter;
     }
 
-    // Cai em prova => securityFilterChain
+    // Cai em prova => securityFilterChain ( <= É nessa funcão que eu vou liberar todas as rotas públicas da minha aplicação)
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
@@ -43,13 +43,17 @@ public class SecurityConfiguration {
 
 // Para liberar as rotas publicas do meu projeto! 
 // Para cada linha abaixo é uma rota que estarei liberando do Tipo (GET|POST|DELETE)
-                //.requestMatchers(HttpMethod.GET, "/api/produto").permitAll()
-                //.requestMatchers(HttpMethod.GET, "/api/produto/*").permitAll() // Utilizasse * quando recebe o ("/{id}") do Produto Controler
-                //.requestMatchers(HttpMethod.DELETE, "/api/cliente/*").permitAll() // * quando recebe o ("/{id}") do Cliente Controler
+                .requestMatchers(HttpMethod.GET, "/api/produto").permitAll()
+                .requestMatchers(HttpMethod.GET, "/api/produto/*").permitAll() // Se a rota recebe um parâmetro, utilizasse " * " no lugar do ("/{id}") do Produto Controler
+                .requestMatchers(HttpMethod.DELETE, "/api/cliente/*").permitAll() // * quando recebe o ("/{id}") do Cliente Controler
 
                 .requestMatchers(HttpMethod.POST, "/api/cliente").permitAll()
                 .requestMatchers(HttpMethod.POST, "/api/funcionario").permitAll()
                 .requestMatchers(HttpMethod.POST, "/api/auth").permitAll()
+                .requestMatchers(HttpMethod.GET, "/api/produto/").hasAnyAuthority(
+                   Perfil.ROLE_CLIENTE,
+                   Perfil.ROLE_FUNCIONARIO_ADMIN,
+                   Perfil.ROLE_FUNCIONARIO_USER) //Consulta de produto
 
                 .requestMatchers(HttpMethod.GET, "/api-docs/*").permitAll()
                 .requestMatchers(HttpMethod.GET, "/swagger-ui/*").permitAll()

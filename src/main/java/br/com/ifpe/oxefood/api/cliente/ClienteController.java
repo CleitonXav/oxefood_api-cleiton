@@ -54,7 +54,9 @@ public class ClienteController {
 
     @PostMapping
     public ResponseEntity<Cliente> save(@RequestBody @Valid ClienteRequest clienteRequest, HttpServletRequest request) {
-        Cliente cliente = clienteService.save(clienteRequest.build(), usuarioService.obterUsuarioLogado(request));
+        
+        Cliente cliente = clienteService.save(clienteRequest.build(),
+        usuarioService.obterUsuarioLogado(request));
         return new ResponseEntity<Cliente>(cliente, HttpStatus.CREATED);
     }
 
@@ -66,7 +68,8 @@ public class ClienteController {
     }
 
     @PostMapping("/endereco/{clienteId}")
-    public ResponseEntity<EnderecoCliente> adicionarEnderecoCliente(@PathVariable("clienteId") Long clienteId, @RequestBody @Valid EnderecoClienteRequest request) {
+    public ResponseEntity<EnderecoCliente> adicionarEnderecoCliente(@PathVariable("clienteId") Long clienteId,
+    @RequestBody @Valid EnderecoClienteRequest request) {
 
         EnderecoCliente endereco = clienteService.adicionarEnderecoCliente(clienteId, request.build());
         return new ResponseEntity<EnderecoCliente>(endereco, HttpStatus.CREATED);

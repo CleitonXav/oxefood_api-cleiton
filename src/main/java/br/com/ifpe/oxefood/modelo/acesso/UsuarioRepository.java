@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
 
+    //select * from usuario where username = :username
     Optional<Usuario> findByUsername(String username);
 
 }
