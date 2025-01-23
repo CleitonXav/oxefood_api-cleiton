@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "Produto") //select * from Produto p
+@Table(name = "Produto") //EX.: select * from Produto (onde Produto é a tabela) p where p.codigo (e Codigo é um Atributo) = "123123"
 @SQLRestriction("habilitado = true")
 @Builder
 @Getter
