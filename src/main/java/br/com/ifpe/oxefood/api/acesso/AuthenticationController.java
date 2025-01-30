@@ -12,10 +12,17 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.ifpe.oxefood.modelo.acesso.Usuario;
 import br.com.ifpe.oxefood.modelo.acesso.UsuarioService;
 import br.com.ifpe.oxefood.modelo.seguranca.JwtService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 
 @RestController
 @RequestMapping("/api/auth")
 @CrossOrigin
+@Tag(
+    name = "API AuthenticationController",
+    description = "API responsável pelos serviços da AuthenticationController no sistema"
+)
+
 public class AuthenticationController {
 
     private final JwtService jwtService;
@@ -28,6 +35,11 @@ public class AuthenticationController {
         this.usuarioService = usuarioService;
     }
 
+
+    @Operation(
+        summary = "Serviço é responsável por definir um endpoint HTTP POST que permite criar uma nova AuthenticationController.",
+        description = "Ele será documentado como uma operação para cadastrar uma nova AuthenticationController enviando os dados necessários no corpo da requisição."
+    ) 
     @PostMapping
     public Map<Object, Object> signin(@RequestBody AuthenticationRequest data) {
     

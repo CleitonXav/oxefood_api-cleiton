@@ -19,16 +19,27 @@ import br.com.ifpe.oxefood.modelo.acesso.Perfil;
 import br.com.ifpe.oxefood.modelo.funcionario.Funcionario;
 import br.com.ifpe.oxefood.modelo.funcionario.FuncionarioService;
 import br.com.ifpe.oxefood.modelo.funcionario.TipoFuncionario;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/api/funcionario")
 @CrossOrigin
+@Tag(
+    name = "API FuncionarioController",
+    description = "API responsável pelos serviços de FuncionarioController no sistema"
+)
 public class FuncionarioController {
 
     @Autowired
     private FuncionarioService funcionarioService;
 
+
+    @Operation(
+        summary = "Serviço é responsável por definir um endpoint HTTP POST que permite criar um novo FuncionarioController.",
+        description = "Ele será documentado como uma operação para cadastrar um novo FuncionarioController enviando os dados necessários no corpo da requisição."
+    )
     @PostMapping
     public ResponseEntity<Funcionario> save(@RequestBody @Valid FuncionarioRequest request) {
 
@@ -44,18 +55,33 @@ public class FuncionarioController {
         return new ResponseEntity<Funcionario>(funcionario, HttpStatus.CREATED);
     }
 
+
+    @Operation(
+        summary = "Serviço responsável por buscar informações da API FuncionarioController, como listar recursos ou obter detalhes específicos .",
+        description = "será documentado como operações de leitura, exibindo os detalhes de cada endpoint associado a API FuncionarioController, como os parâmetros necessários e as possíveis respostas."
+    )
     @GetMapping
     public List<Funcionario> listarTodos() {
 
         return funcionarioService.listarTodos();
     }
 
+
+    @Operation(
+        summary = "Serviço é responsável por criar um endpoint na API que permite buscar ou consultar um FuncionarioController com base no seu identificador (id).",
+        description = "No Swagger, esse endpoint será documentado como uma operação HTTP GET acessível no caminho /FuncionarioController/{id} espera receber um parâmetro de caminho (id), que é o identificador único do FuncionarioController a ser buscado."
+    )
     @GetMapping("/{id}")
     public Funcionario obterPorID(@PathVariable Long id) {
 
         return funcionarioService.obterPorID(id);
     }
 
+
+    @Operation(
+        summary = "Serviço é responsável por atualizar os dados de um FuncionarioController existente com base no seu identificador (id).", 
+        description = "No Swagger, ele será documentado como um endpoint que permite modificar informações de um FuncionarioController já cadastrado."
+    )
     @PutMapping("/{id}")
     public ResponseEntity<Funcionario> update(@PathVariable("id") Long id, @RequestBody FuncionarioRequest request) {
 
@@ -63,6 +89,11 @@ public class FuncionarioController {
         return ResponseEntity.ok().build();
     }
 
+
+    @Operation(
+        summary = "Serviço é responsável por expor um endpoint HTTP DELETE que permite a exclusão de um FuncionarioController com base no seu identificador (id).", 
+        description = "ele será documentado como uma operação que realiza a exclusão de um recurso específico (neste caso, o FuncionarioController) na API."
+    )
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(@PathVariable Long id) {
 
