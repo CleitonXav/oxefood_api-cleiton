@@ -2,20 +2,20 @@ entregador
 
  {
         "nome": "Cleiton Xavier",
-        "cpf": 052.797.740-30,
+        "cpf": "786.974.760-20",
         "rg": "1212123",
         "dataNascimento": "12/02/1986",
         "foneCelular": "(11) 11111.111_",
         "foneFixo": "(11) 1111.1111",
         "qtdEntregasRealizadas": 10,
         "valorFrete": 10.0,
-        "enderecoRua": "osvaldo crux",
-        "enderecoNumero": "56",
-        "enderecoBairro": "tamandare",
-        "enderecoCidade": "Moreno",
-        "enderecoCep": "54800-000",
-        "enderecoUf": null,
-        "enderecoComplemento": "dddd",
+        "Rua": "osvaldo crux",
+        "Numero": "56",
+        "Bairro": "tamandare",
+        "Cidade": "Moreno",
+        "Cep": "54800-000",
+        "Uf": null,
+        "Complemento": "dddd",
         "ativo": true
     }
 
