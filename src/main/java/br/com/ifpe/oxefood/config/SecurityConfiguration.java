@@ -32,7 +32,8 @@ public class SecurityConfiguration {
         this.jwtAuthenticationFilter = jwtAuthenticationFilter;
     }
 
-    // Cai em prova => securityFilterChain ( <= É nessa funcão que eu vou liberar todas as rotas públicas da minha aplicação)
+    // Cai em prova => securityFilterChain ( <= É nessa funcão que será liberada todas as rotas públicas da minha aplicação!)
+    // quando se acrescenta o SpringSecurity na aplicação todas as rotas por padrão são fechadas!
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
@@ -42,7 +43,7 @@ public class SecurityConfiguration {
             .authorizeHttpRequests(authorize -> authorize
 
 // Para liberar as rotas publicas do meu projeto! 
-// Para cada linha abaixo é uma rota que estarei liberando do Tipo (GET|POST|DELETE)
+// Para cada linha abaixo é uma rota que estarei liberando do Tipo (GET|POST|PUT|DELETE)
                 .requestMatchers(HttpMethod.GET, "/api/produto").permitAll()
                 .requestMatchers(HttpMethod.GET, "/api/produto/*").permitAll() // Se a rota recebe um parâmetro, utilizasse " * " no lugar do ("/{id}") do Produto Controler
                 .requestMatchers(HttpMethod.DELETE, "/api/cliente/*").permitAll() // * quando recebe o ("/{id}") do Cliente Controler

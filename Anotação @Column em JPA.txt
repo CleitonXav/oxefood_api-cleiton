@@ -1,4 +1,4 @@
-https://github.com/DayvisonCavalcanti/oxefood-api-dayvison
+
 
 Claro! A anotação `@Column` em JPA é bastante versátil e pode ser configurada com diferentes atributos para atender às necessidades específicas de seu modelo de dados. Aqui está uma lista com os atributos mais usados da anotação `@Column` e suas descrições:
 

@@ -22,14 +22,13 @@ entregador
 
 cliente
 
-{
-    
+{    
     "username": "cleitonxav25@gmail",
     "password": "123456",
     "nome": "Cleiton Xavier",
     "dataNascimento": "17/01/1982",
     "cpf": "247.666.260-79",
-    "foneCelular": "(81) 11111.111_",
+    "foneCelular": "(81) 11111.111",
     "foneFixo": "(81) 1111.1111"
 }
 
