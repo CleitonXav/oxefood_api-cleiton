@@ -1,6 +1,17 @@
 # oxefood_api-cleiton
 
-Dados no Back-Entregador_Categoria_Cliente_End.Cliente_Produto e etc.
+Extensões app para o VSCode:
+
+# Material Icon Theme
+# Prettier - Code formatter
+# ESLint
+# Dotenv Official +Vault
+# Open In Default Browser
+
+_________________________________________________________________________________________
+````````
+
+# Dados no Back-Entregador_Categoria_Cliente_End.Cliente_Produto e etc.
 
 entregador
 
@@ -26,15 +37,13 @@ entregador
 cliente
 
 {
-
-    "username": "maria@gmail.com",
-    "password": "12345678",
-    "nome": "maria cristina",
-    "dataNascimento": "12/02/1986",
-    "cpf": "25625611430",
-    "foneCelular": "(81) 11111.111_",
+    "email": "cleitonxav25@gmail.com",
+    "password": "123456",
+    "nome": "Cleiton Xavier",
+    "dataNascimento": "17/01/1986",
+    "cpf": "625.343.930-81",
+    "foneCelular": "(81) 98888.8888",
     "foneFixo": "(81) 1111.1111"
-
 }
 
 Endereço Cliente
@@ -81,10 +90,10 @@ Funcionario
 "nome": "Cleiton"
 }
 
----
+_________________________________________________________________________________________
+````````
 
-```
-FAZENDO O DEPLOY DO PROJETO BACK-END NO SERVIDOR
+# FAZENDO O DEPLOY DO PROJETO BACK-END NO SERVIDOR
 
 Pré-requisitos para o ambiente:
 Instalar o JDK 17
@@ -103,7 +112,7 @@ Para rodar o projeto siga os passos abaixo  e execute os comandos:
 _______________________________________________________________________________________________________
 ```
 
-FAZENDO O DEPLOY DO PROJETO FRONT-END NO SERVIDOR
+# FAZENDO O DEPLOY DO PROJETO FRONT-END NO SERVIDOR
 
 Pré-requisitos para o ambiente:
 Instalar o NodeJS
@@ -117,10 +126,10 @@ Para rodar o projeto siga os passos abaixo e execute os comandos:
 2. Entre na pasta do projeto e execute o comando abaixo para rodar o projeto:
    npm start
 
----
+_________________________________________________________________________________________
+````````
 
-```
-ATERAÇÃO DO .ENV NO DOCKER-COMPOSE
+# ATERAÇÃO DO .ENV NO DOCKER-COMPOSE
 
 version: "3"
 services:
@@ -157,6 +166,10 @@ spring.mail.password=${EMAIL_PASSWORD}
 spring.mail.properties.mail.smtp.auth=true
 spring.mail.properties.mail.smtp.starttls.enable=true
 
+security.jwt.secret-key=3cfa76ef14937c1c0ea519f8fc057a80fcd04a7420f8e8bcd0a7567c272e007b
+# 1h in millisecond
+security.jwt.expiration-time=3600000
+
 springdoc.api-docs.path=/api-docs
 
 ---
@@ -167,10 +180,11 @@ ATERAÇÃO DO .ENV NO GITIGNORE
 ### VS Code ###
 .vscode/
 .env
-________________________________________________________________
-```
 
-ANOTACAO SPRING VALIDATION
+_________________________________________________________________________________________
+````````
+
+# ANOTACAO SPRING VALIDATION
 
 Claro! Aqui está uma lista abrangente das anotações de validação padrão disponíveis na Bean Validation (JSR-380), que são usadas frequentemente em projetos Spring:
 
@@ -390,7 +404,9 @@ Claro! Aqui está uma lista abrangente das anotações de validação padrão di
     private String numeroCartao;
     ```
 
-Anotações mais comuns do Spring Validation: No back-end: Entrada das Requisições - C20
+_________________________________________________________________________________________
+````````
+# Anotações mais comuns do Spring Validation: No back-end: Entrada das Requisições - C20
 
 @NotNull -> Válida se o campo está nulo.
 
@@ -420,10 +436,10 @@ Há várias anotações que vieram para poder facilitar a nossa vida, como, por 
 
 Essas anotações ajudam a garantir que os dados sejam consistentes e válidos antes de serem processados ou armazenados em um banco de dados.
 
----
+_________________________________________________________________________________________
+````````
 
-````
-ANOTAÇÃO @COLUMN EM JPA
+# ANOTAÇÃO @COLUMN EM JPA
 
 Claro! A anotação `@Column` em JPA é bastante versátil e pode ser configurada com diferentes atributos para atender às necessidades específicas de seu modelo de dados. Aqui está uma lista com os atributos mais usados da anotação `@Column` e suas descrições:
 
@@ -517,8 +533,8 @@ public class ExemploEntidade {
 
 Neste exemplo, cada atributo da anotação `@Column` é utilizado para definir características específicas das colunas da tabela no banco de dados.
 
-__________________________________________________________________________________________________________________________________________________________________________________
-````
+_________________________________________________________________________________________
+````````
 
 PERGUNTAS TÍPICAS C/RESPOSTAS
 
@@ -690,3 +706,241 @@ Isso melhora a escalabilidade e torna a API mais eficiente.
 400 Bad Request → Erro na requisição do cliente
 404 Not Found → Recurso não encontrado
 500 Internal Server Error → Erro no servidor
+
+_________________________________________________________________________________________
+```
+** http://localhost:8081/swagger-ui/index.html **
+
+
+PASTA ACESSO: # API AuthenticationController
+
+@Tag(
+    name = "API AuthenticationController",
+    description = "API responsável pelos serviços da AuthenticationController no sistema"
+)
+@Operation(
+        summary = "Serviço é responsável por definir um endpoint HTTP POST que permite criar uma nova AuthenticationController.",
+        description = "Ele será documentado como uma operação para cadastrar uma nova AuthenticationController enviando os dados necessários no corpo da requisição."
+    ) 
+
+________
+```
+# API FuncionarioController
+API responsável pelos serviços de FuncionarioController no sistema
+
+
+GET
+/api/funcionario/{id}
+Serviço é responsável por criar um endpoint na API que permite buscar ou consultar um FuncionarioController com base no seu identificador (id).
+
+PUT
+/api/funcionario/{id}
+Serviço é responsável por atualizar os dados de um FuncionarioController existente com base no seu identificador (id).
+
+DELETE
+/api/funcionario/{id}
+Serviço é responsável por expor um endpoint HTTP DELETE que permite a exclusão de um FuncionarioController com base no seu identificador (id).
+
+GET
+/api/funcionario
+Serviço responsável por buscar informações da API FuncionarioController, como listar recursos ou obter detalhes específicos .
+
+POST
+/api/funcionario
+Serviço é responsável por definir um endpoint HTTP POST que permite criar um novo FuncionarioController.
+
+________
+```
+
+# API Venda
+API responsável pelos serviços de VENDA no sistema
+
+
+GET
+/api/venda/{id}
+Serviço é responsável por criar um endpoint na API que permite buscar ou consultar uma venda com base no seu identificador (id).
+
+PUT
+/api/venda/{id}
+Serviço é responsável por atualizar os dados de uma venda existente com base no seu identificador (id).
+
+DELETE
+/api/venda/{id}
+Serviço é responsável por expor um endpoint HTTP DELETE que permite a exclusão de uma venda com base no seu identificador (id).
+
+GET
+/api/venda
+Serviço responsável por buscar informações da API Venda, como listar recursos ou obter detalhes específicos.
+
+POST
+/api/venda
+Serviço é responsável por definir um endpoint HTTP POST que permite criar uma nova venda.
+
+________
+```
+
+# API CategoriaProdutoController
+API responsável pelos serviços da CategoriaProdutoController no sistema
+
+GET
+/api/categoriaproduto/{id}
+Serviço é responsável por criar um endpoint na API que permite buscar ou consultar um CategoriaProdutoController com base no seu identificador (id).
+
+PUT
+/api/categoriaproduto/{id}
+Serviço é responsável por atualizar os dados de uma CategoriaProdutoController existente com base no seu identificador (id).
+
+DELETE
+/api/categoriaproduto/{id}
+Serviço é responsável por expor um endpoint HTTP DELETE que permite a exclusão de uma CategoriaProdutoController com base no seu identificador (id).
+
+GET
+/api/categoriaproduto
+Serviço responsável por buscar informações da API CategoriaProdutoController, como listar recursos ou obter detalhes específicos .
+
+POST
+/api/categoriaproduto
+Serviço é responsável por definir um endpoint HTTP POST que permite criar uma nova CategoriaProdutoController.
+
+________
+```
+# API Cliente
+API responsável pelos servçios de cliente no sistema
+
+
+GET
+/api/cliente/{id}
+Serviço é responsável por criar um endpoint na API que permite buscar ou consultar um cliente com base no seu identificador (id).
+
+PUT
+/api/cliente/{id}
+Serviço é responsável por atualizar os dados de um cliente existente com base no seu identificador (id).
+
+DELETE
+/api/cliente/{id}
+Serviço é responsável por expor um endpoint HTTP DELETE que permite a exclusão de um cliente com base no seu identificador (id).
+
+PUT
+/api/cliente/endereco/{enderecoId}
+Serviço responsável por definir endpoints PUT que permitem atualizar informações relacionadas ao endereço de um cliente na API.
+
+DELETE
+/api/cliente/endereco/{enderecoId}
+Serviço é responsável por criar um endpoint que permite excluir um endereço identificado pelo {enderecoId}.
+
+GET
+/api/cliente
+Serviço responsável por buscar informações da API, como listar recursos ou obter detalhes específicos.
+
+POST
+/api/cliente
+Serviço é responsável por definir um endpoint HTTP POST que permite criar um novo cliente.
+
+POST
+/api/cliente/endereco/{clienteId}
+Serviço é responsável por adicionar um novo endereço para um cliente existente, utilizando o clienteId para associar o endereço ao cliente correto.
+
+________
+```
+# API EntregadorController
+API responsável pelos serviços do EntregadorController no sistema
+
+
+GET
+/api/entregador/{id}
+Serviço é responsável por criar um endpoint na API que permite buscar ou consultar um EntregadorController com base no seu identificador (id).
+
+PUT
+/api/entregador/{id}
+Serviço é responsável por atualizar os dados de um EntregadorController existente com base no seu identificador (id).
+
+DELETE
+/api/entregador/{id}
+Serviço é responsável por expor um endpoint HTTP DELETE que permite a exclusão de um EntregadorController com base no seu identificador (id).
+
+GET
+/api/entregador
+Serviço responsável por buscar informações da API EntregadorController, como listar recursos ou obter detalhes específicos .
+
+POST
+/api/entregador
+Serviço é responsável por definir um endpoint HTTP POST que permite criar um novo EntregadorController.
+
+________
+```
+# API Produto
+API responsável pelos serviços de PRODUTO no sistema
+
+
+GET
+/api/produto/{id}
+Serviço é responsável por criar um endpoint na API que permite buscar ou consultar um Produto com base no seu identificador (id).
+
+PUT
+/api/produto/{id}
+Serviço é responsável por atualizar os dados de um Produto existente com base no seu identificador (id).
+
+DELETE
+/api/produto/{id}
+Serviço é responsável por expor um endpoint HTTP DELETE que permite a exclusão de um Produto com base no seu identificador (id).
+
+GET
+/api/produto
+Serviço responsável por buscar informações da API Produto, como listar recursos ou obter detalhes específicos .
+
+POST
+/api/produto
+Serviço é responsável por definir um endpoint HTTP POST que permite criar um novo Produto.
+
+POST
+/api/produto/filtrar
+Serviço é responsável por definir um endpoint HTTP POST que permite filtrar produtos com base em critérios enviados no corpo da requisição.
+
+_________________________________________________________________________________________
+```
+# EntidadeNegocio
+
+@JsonIgnore
+    @Version
+    private Long versao; //serve para indicar quantas alterações foram feitas naquele registro
+
+_________________________________________________________________________________________
+```
+# SecurityConfiguration
+
+    // Cai em prova => securityFilterChain ( <= É nessa funcão que será liberada todas as rotas públicas da minha aplicação!)
+    // quando se acrescenta o SpringSecurity na aplicação todas as rotas por padrão são fechadas!
+    @Bean
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+
+        http
+            .cors(cors -> cors.configurationSource(corsConfigurationSource()))
+            .csrf(c -> c.disable())
+            .authorizeHttpRequests(authorize -> authorize)
+    }
+
+
+// Para liberar as rotas publicas do meu projeto! 
+// Para cada linha abaixo é uma rota que estarei liberando do Tipo (GET|POST|PUT|DELETE)
+
+                .requestMatchers(HttpMethod.GET, "/api/produto").permitAll()
+                .requestMatchers(HttpMethod.GET, "/api/produto/*").permitAll() // Se a rota recebe um parâmetro, utilizasse " * " no lugar do ("/{id}") do Produto Controler
+                .requestMatchers(HttpMethod.DELETE, "/api/cliente/*").permitAll() // * quando recebe o ("/{id}") do Cliente Controler
+
+                .requestMatchers(HttpMethod.POST, "/api/cliente").permitAll() //permitAll() Cadastra um cliente sem estar logado!
+                .requestMatchers(HttpMethod.POST, "/api/funcionario").permitAll() //permitAll() Cadastra um funcionario sem estar logado!
+            
+_________________________________________________________________________________________
+```
+5) Inicialize um repositório git no diretório do projeto criado, vincule ao repositório remoto e dê um push para o servidor remoto.
+
+Comandos a serem executados dentro do diretório do projeto:
+git init
+git remote add origin https://github.com/robertoalencar/oxefood-web.git
+git branch -M main
+git add .
+git commit -m “primeiro commit”
+git push -u origin main
+
+_________________________________________________________________________________________
+```
